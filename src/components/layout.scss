@@ -1,3 +1,41 @@
+/* Import font */
+@font-face {
+  font-family: 'M PLUS Rounded 1c';
+  src: url(../fonts/MPLUSRounded1c-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'M PLUS Rounded 1c Bold';
+  src: url(../fonts/MPLUSRounded1c-Bold.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Major Mono Display';
+  src: url(../fonts/MajorMonoDisplay-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url(../fonts/Nunito-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Nunito Bold';
+  src: url(../fonts/Nunito-Bold.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+// Variables font
+$MPLUSRounded1c: 'M PLUS Rounded 1c', sans-serif;
+$MajorMonoDisplay: 'Major Mono Display', monospace;
+$Nunito: 'Nunito', sans-serif;
+$Nunito-bold: 'Nunito Bold', sans-serif;
+
+/* Gatsby's styles */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -615,6 +653,114 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+/* end gatsby's styles */
+
+/* My define */
+.text-center {
+  text-align: center;
+}
+.text-shadow-red {
+  text-shadow: 1px 1px #ff3f34,
+                2px 2px #ff3f34;
+}
+.underline {
+  position: relative;
+}
+.underline:after {
+  content: " ";
+  white-space: pre;
+  display: block;
+  position: absolute;
+  width: 90%;
+  height: 20%;
+  left: 5%;
+  bottom: -.5rem;
+  border-top: .1rem solid;
+}
+.underline-black:after {
+  background-color: #1e272e;
+}
+.underline-white:after {
+  background-color: #1e272e;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+/* end my define */
+
+/* My styles */
+body {
+  font-family: $Nunito;
+  /* background-color: rgb(168, 1, 255, .7); */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #ffa801;
+}
+.myself {
+  margin-bottom: 30px;
+}
+.head {
+  margin-bottom: 50px;
+  height: 100vh;
+}
+.av {
+  img {
+    animation: av-shadow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(10px 0px 0px rgba(255, 63, 52,1.0));
+  }
+}
+@keyframes av-shadow {
+  0% {filter: drop-shadow(6px 0px 0px rgba(255, 23, 9,1.0));}
+  25% {filter: drop-shadow(10px 0px 0px rgba(255, 63, 52,1.0));}
+  50% {filter: drop-shadow(8px 0px 0px rgba(255, 23, 9,1.0));}
+  75% {filter: drop-shadow(12px 0px 0px rgba(255, 63, 52,1.0));}
+  75% {filter: drop-shadow(8px 0px 0px rgba(255, 23, 9,1.0));}
+}
+.hello {
+  color: #fff;
+  font-family: $MajorMonoDisplay;
+  font-weight: 700;
+  font-size: 2rem;
+  .smile {
+    transition: transform .7s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.6);
+    }
+    &:hover:after {
+      content: "\1F601";
+    }
+    &:after {
+      content: "\1F600";
+    }
+  }
+}
+.hello span.underline:after {
+  width: 88%;
+}
+.bot * {
+  font-family: $Nunito;
+  letter-spacing: 1px;
+  color: #FFF4DF;
+}
+.bot h2 {
+  letter-spacing: 5px;
+}
+footer {
+  color: #c6ccd1;
+  font-family: $MPLUSRounded1c;
+  font-size: .8rem;
+}
+footer div {
+  width: fit-content;
+}
+footer a {
+  color: #485460;
+}
+/* end my styles */
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
